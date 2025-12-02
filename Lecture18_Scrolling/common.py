@@ -4,3 +4,5 @@ boy = None
 court = None
 
 
+balls = []
+

@@ -106,7 +106,7 @@ class Boy:
         self.face_dir = 1
         self.xdir, self.ydir = 0, 0
         self.image = load_image('animation_sheet.png')
-
+        self.ball_count = 0
         self.IDLE = Idle(self)
         self.RUN = Run(self)
         self.state_machine = StateMachine(
@@ -154,4 +154,6 @@ class Boy:
         return self.x - 20, self.y - 50, self.x + 20, self.y + 50
 
     def handle_collision(self, group, other):
+        if group == 'boy:ball':
+            self.ball_count += 1
         pass
