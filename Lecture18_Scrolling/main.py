@@ -8,3 +8,4 @@ open_canvas(600 , 600)
 game_framework.run(start_mode)
 close_canvas()
 
+#끝
