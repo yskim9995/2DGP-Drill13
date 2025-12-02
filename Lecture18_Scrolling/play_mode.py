@@ -30,7 +30,7 @@ def init():
 
     common.boy = Boy()
     game_world.add_object(common.boy, 1)
-
+    game_world.add_collision_pair('boy:ball', common.boy, None)
 
     balls = [Ball() for _ in range(100)]
     for ball in balls:
