@@ -163,3 +163,5 @@ class Boy:
             self.ball_count += 1
             print(self.ball_count)
         pass
+
+    #끝!
