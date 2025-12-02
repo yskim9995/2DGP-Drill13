@@ -12,8 +12,8 @@ class Ball:
     def __init__(self, x = None, y = None):
         if Ball.image == None:
             Ball.image = load_image('ball21x21.png')
-        self.x = x if x else random.randint(100, 1180)
-        self.y = y if y else random.randint(100, 924)
+        self.x = x if x else random.randint(50, 1800)
+        self.y = y if y else random.randint(50, 1100)
         self.sx, self.sy  = 0,0
     def draw(self):
 
