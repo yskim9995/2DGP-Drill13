@@ -148,12 +148,18 @@ class Boy:
 
     def draw(self):
         self.state_machine.draw()
+        draw_rectangle(*self.get_bb())
+
 
     # fill here
     def get_bb(self):
-        return self.x - 20, self.y - 50, self.x + 20, self.y + 50
+        sx = self.x - common.court.window_left
+        sy = self.y - common.court.window_bottom
+        return sx - 20, sy - 50, sx + 20, sy + 50
 
     def handle_collision(self, group, other):
+        print('뭔가랑 충돌함')
         if group == 'boy:ball':
             self.ball_count += 1
+            print(self.ball_count)
         pass
