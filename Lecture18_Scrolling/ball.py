@@ -3,20 +3,26 @@ import game_world
 import game_framework
 import random
 
+import common
+
 class Ball:
     image = None
+
 
     def __init__(self, x = None, y = None):
         if Ball.image == None:
             Ball.image = load_image('ball21x21.png')
         self.x = x if x else random.randint(100, 1180)
         self.y = y if y else random.randint(100, 924)
-
+        self.sx, self.sy  = 0,0
     def draw(self):
-        self.image.draw(self.x, self.y)
+
+        self.image.clip_draw(0,0, self.image.w, self.image.h, self.sx, self.sy)
+        # self.image.draw(self.x, self.y)
         draw_rectangle(*self.get_bb())
 
     def update(self):
+        self.sx, self.sy =  self.x - common.court.window_left, self.y - common.court.window_bottom
         pass
 
     def get_bb(self):
